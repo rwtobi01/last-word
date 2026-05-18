@@ -1,0 +1,8 @@
+last-word/
+├── api/
+│   ├── stripe-webhook.js
+│   ├── create-checkout.js
+│   └── _email-template.js
+├── index.html
+├── App.jsx          ← rename last-word-pro.jsx to this
+└── SETUP-GUIDE.md
