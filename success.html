@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Letter Is Ready — Last Word</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #f4efe3;
+  color: #1a1510;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+:root {
+  --gold: #8a6a2a;
+  --gold-mid: #b08a48;
+  --gold-light: #c9a96e;
+  --gold-pale: #e8d9b8;
+  --bg: #f4efe3;
+  --bg2: #ece5d4;
+  --bg3: #e2d9c4;
+  --ink: #1a1510;
+  --ink2: #4a3f32;
+  --ink3: #8a7a68;
+  --border: #d4c8b0;
+  --paper: #fdfaf2;
+}
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 1.15; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes breathe { 0%,100% { opacity:0.4; } 50% { opacity:1; } }
+@keyframes checkDraw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes circleDraw { from { stroke-dashoffset: 283; } to { stroke-dashoffset: 0; } }
+
+/* NAV */
+nav {
+  padding: 18px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(244,239,227,0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { text-decoration: none; }
+.logo-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); letter-spacing: 0.06em; display: block; }
+.logo-sub { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink3); display: block; margin-top: 1px; }
+@media(max-width:640px) { nav { padding: 16px 20px; } }
+
+/* MAIN */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.success-container {
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+}
+
+/* CHECK ANIMATION */
+.check-wrap {
+  margin: 0 auto 40px;
+  width: 88px;
+  height: 88px;
+  animation: fadeIn 0.4s ease both;
+}
+.check-circle {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  animation: circleDraw 0.8s ease 0.2s forwards;
+}
+.check-mark {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: checkDraw 0.5s ease 0.9s forwards;
+}
+
+.success-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+
+.success-title {
+  font-size: clamp(36px, 6vw, 58px);
+  color: var(--ink);
+  margin-bottom: 16px;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+.success-title em { color: var(--gold); font-style: italic; }
+
+.success-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink2);
+  margin-bottom: 36px;
+  line-height: 1.65;
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+
+/* PAPER CARD */
+.success-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 40px 44px;
+  margin-bottom: 36px;
+  text-align: left;
+  position: relative;
+  animation: fadeUp 0.6s ease 0.6s both;
+}
+
+.success-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.success-card-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.success-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.success-card p {
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.85;
+  font-style: italic;
+}
+
+.success-card p strong {
+  font-style: normal;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* WHAT'S NEXT */
+.next-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s ease 0.7s both;
+}
+
+@media(max-width: 500px) {
+  .next-steps { grid-template-columns: 1fr; }
+  .success-card { padding: 28px 22px; }
+}
+
+.next-step {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 20px;
+  text-align: left;
+}
+
+.next-step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-style: italic;
+  color: var(--gold-pale);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.next-step h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.next-step p {
+  font-size: 13px;
+  color: var(--ink3);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.8s both;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 36px;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: all 0.25s;
+  display: inline-block;
+}
+
+.btn-primary:hover { background: #6a4e18; transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink2);
+  text-decoration: none;
+  padding: 14px 28px;
+  font-family: 'EB Garamond', serif;
+  font-size: 16px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* VERSE */
+.success-verse {
+  margin-top: 48px;
+  padding: 20px 24px;
+  border-left: 2px solid var(--gold-pale);
+  text-align: left;
+  animation: fadeUp 0.6s ease 0.9s both;
+}
+
+.success-verse p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink3);
+  line-height: 1.75;
+}
+
+.success-verse cite {
+  display: block;
+  font-size: 12px;
+  color: var(--gold-mid);
+  letter-spacing: 0.12em;
+  margin-top: 8px;
+  font-style: normal;
+}
+
+/* FOOTER */
+footer {
+  background: #110c04;
+  color: #5a4a38;
+  padding: 40px 24px 32px;
+  text-align: center;
+  border-top: 1px solid #1e1608;
+}
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--gold-mid); display: block; margin-bottom: 3px; }
+.footer-tagline { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: #3a2e20; margin-bottom: 16px; display: block; }
+footer p { font-size: 12px; color: #3a2e20; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo">
+    <span class="logo-name">Last Word</span>
+    <span class="logo-sub">The letter you owe someone</span>
+  </a>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="success-container">
+
+    <!-- Animated check -->
+    <div class="check-wrap">
+      <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+        <circle class="check-circle" cx="45" cy="45" r="42" transform="rotate(-90 45 45)" />
+        <polyline class="check-mark" points="26,46 38,58 64,33" />
+      </svg>
+    </div>
+
+    <span class="success-eyebrow">✦ &nbsp; Payment received</span>
+
+    <h1 class="success-title">Your letter is<br /><em>on its way.</em></h1>
+
+    <p class="success-subtitle">
+      Check your inbox — it should arrive within a few minutes.<br />
+      Some of the most important words you've ever sent.
+    </p>
+
+    <!-- Info card -->
+    <div class="success-card">
+      <span class="success-card-icon">✉️</span>
+      <h3>What happens next</h3>
+      <p>
+        Your letter has been sent to <strong>your email address</strong> from 
+        <strong>letters@lastwordletters.com</strong>. If you don't see it in the 
+        next few minutes, please check your spam or junk folder and mark it as safe.
+      </p>
+      <p style="margin-top: 14px;">
+        If you have any issues receiving your letter, email us at 
+        <strong>hello@lastwordletters.com</strong> and we will resend it promptly.
+      </p>
+    </div>
+
+    <!-- Next steps -->
+    <div class="next-steps">
+      <div class="next-step">
+        <div class="next-step-num">1</div>
+        <h4>Read it slowly</h4>
+        <p>Your letter was built from your own words and memories. Give it the time it deserves.</p>
+      </div>
+      <div class="next-step">
+        <div class="next-step-num">2</div>
+        <h4>Send it when ready</h4>
+        <p>There is no rush. The right moment is the one when you feel ready to send it.</p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+      <a href="/" class="btn-primary">Return home</a>
+      <a href="/app" class="btn-ghost">Write another letter</a>
+    </div>
+
+    <!-- Verse -->
+    <div class="success-verse">
+      <p>"The right word at the right time — beautiful! Yes, how good, how delightful, a word well spoken."</p>
+      <cite>— Proverbs 15:23</cite>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Last Word</span>
+  <span class="footer-tagline">The letter you owe someone</span>
+  <p>Founded by Morounke Williams-Tobi &nbsp;·&nbsp; © 2026 Last Word</p>
+</footer>
+
+</body>
+</html>
