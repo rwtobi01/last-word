@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add Your Voice — Last Word Letters</title>
+<meta name="description" content="You've been invited to contribute to a letter. Add your memories and words — they'll be woven into something lasting." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #f5f0e6;
+  color: #1a1510;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+:root {
+  --gold: #9a7a3a;
+  --gold-light: #c9a96e;
+  --gold-pale: #e8d9b8;
+  --bg: #f5f0e6;
+  --bg2: #ede7d8;
+  --bg3: #e4ddd0;
+  --ink: #1a1510;
+  --ink2: #4a3f32;
+  --ink3: #8a7a68;
+  --border: #d4c9b8;
+  --paper: #fdfaf4;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 1.2; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+}
+.logo-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--gold); text-decoration:none; }
+.logo-sub { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--ink3); display:block; margin-top:1px; }
+
+main { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; }
+
+.hero-block { text-align: center; padding: 36px 0 44px; animation: fadeUp 0.6s ease; }
+.hero-tag { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+.hero-title { font-size: clamp(30px, 6vw, 46px); font-style: italic; color: var(--ink); margin-bottom: 16px; line-height: 1.2; }
+.hero-title em { color: var(--gold); }
+.hero-divider { width: 32px; height: 1px; background: var(--gold); margin: 0 auto 16px; }
+.hero-body { font-size: 16px; color: var(--ink2); font-style: italic; line-height: 1.85; max-width: 440px; margin: 0 auto; }
+
+.recipient-card { background: var(--paper); border: 1px solid var(--border); border-radius: 3px; padding: 20px 22px; margin-bottom: 32px; text-align: center; }
+.recipient-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+.recipient-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; color: var(--ink); margin-bottom: 4px; }
+.recipient-role { font-size: 14px; color: var(--ink3); font-style: italic; }
+
+.question-block { margin-bottom: 28px; animation: fadeUp 0.4s ease both; }
+.question-label { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--ink); display: block; margin-bottom: 6px; }
+.question-hint { font-size: 11px; letter-spacing: 0.1em; color: var(--gold); display: block; margin-bottom: 8px; }
+.question-field {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 12px 14px; font-family: 'EB Garamond', serif; font-size: 15px; line-height: 1.7;
+  color: var(--ink); resize: vertical; outline: none; transition: border-color 0.2s;
+}
+.question-field:focus { border-color: var(--gold); }
+.question-field::placeholder { color: #b0a090; }
+.question-answered { font-size: 11px; color: var(--gold); margin-top: 4px; }
+
+.progress-dots { display: flex; gap: 6px; margin-bottom: 32px; }
+.progress-dot { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+.progress-dot.filled { background: var(--gold); }
+
+.submit-btn { width: 100%; background: var(--gold); color: #fff; border: none; padding: 16px; font-family: 'EB Garamond', serif; font-size: 16px; letter-spacing: 0.03em; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+.submit-btn:hover { background: #7a5e28; }
+.submit-btn:disabled { opacity: 0.5; cursor: default; }
+
+.generating { text-align: center; padding: 80px 0; animation: fadeUp 0.5s ease; }
+.spinner { width: 52px; height: 52px; margin: 0 auto 28px; border: 1px solid var(--gold-light); border-top-color: transparent; border-radius: 50%; animation: spin 1.4s linear infinite; }
+.generating h2 { font-size: 26px; color: var(--gold); font-style: italic; margin-bottom: 10px; font-weight: 300; }
+.generating p { color: var(--ink3); font-style: italic; line-height: 1.8; }
+
+.success-wrap { text-align: center; padding: 60px 0; animation: fadeUp 0.6s ease; }
+.success-icon { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); }
+.success-title { font-size: 34px; color: var(--gold); font-style: italic; font-weight: 300; margin-bottom: 14px; }
+.success-body { color: var(--ink2); font-style: italic; line-height: 1.8; max-width: 380px; margin: 0 auto; }
+
+.error-wrap { text-align: center; padding: 80px 24px; }
+.error-wrap h2 { font-size: 26px; color: var(--ink2); font-style: italic; margin-bottom: 12px; }
+.error-wrap p { color: var(--ink3); font-style: italic; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo-name">
+    Last Word Letters
+    <span class="logo-sub">The letter you owe someone</span>
+  </a>
+</nav>
+<main id="app">
+  <div class="generating">
+    <div class="spinner"></div>
+    <h2>Loading…</h2>
+    <p>Just a moment.</p>
+  </div>
+</main>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const orderId = params.get("id");
+
+let orderData = null;
+
+const QUESTIONS = [
+  {
+    id: "memory",
+    label: "Share one specific memory of them.",
+    hint: "A single vivid moment says more than years of summary.",
+    placeholder: "e.g. I remember the time they stayed late to help me finish a project I thought was hopeless…"
+  },
+  {
+    id: "quality",
+    label: "What quality of theirs has stayed with you?",
+    hint: "Something you'll carry with you after they're gone.",
+    placeholder: "e.g. The way they always made time for people, even when they had nothing left to give…"
+  },
+  {
+    id: "impact",
+    label: "How did knowing them change something in you?",
+    hint: "Even small shifts matter.",
+    placeholder: "e.g. They taught me that showing up quietly is its own kind of leadership…"
+  },
+  {
+    id: "unsaid",
+    label: "What do you want them to know that you've never quite said?",
+    hint: "This is your chance.",
+    placeholder: "e.g. That they made this place feel like it mattered. That we noticed."
+  },
+];
+
+let answers = {};
+let contributorName = "";
+
+async function loadOrder() {
+  if (!orderId) {
+    showError("This link doesn't look right. Please check the link you were sent.");
+    return;
+  }
+  try {
+    const res = await fetch(`/api/get-collective?id=${orderId}`);
+    const data = await res.json();
+    if (!data.found) {
+      showError("This link has expired or doesn't exist. Please check with the person who sent it.");
+      return;
+    }
+    orderData = data;
+    renderForm();
+  } catch (err) {
+    showError("Something went wrong loading this page. Please try again.");
+  }
+}
+
+function showError(msg) {
+  document.getElementById("app").innerHTML = `
+    <div class="error-wrap">
+      <h2>Something's not right.</h2>
+      <p>${msg}</p>
+    </div>`;
+}
+
+function renderForm() {
+  const app = document.getElementById("app");
+  const answeredCount = QUESTIONS.filter(q => (answers[q.id]||"").trim().length > 10).length;
+  const canSubmit = answeredCount >= 3 && contributorName.trim().length > 1;
+
+  app.innerHTML = `
+    <div class="hero-block">
+      <span class="hero-tag">One Voice, Many Hearts</span>
+      <h1 class="hero-title">Add your<br /><em>voice.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-body">Your words will be woven into a single letter — along with everyone else's. Answer honestly. That's all.</p>
+    </div>
+
+    <div class="recipient-card">
+      <span class="recipient-label">This letter is for</span>
+      <div class="recipient-name">${orderData.recipientName}</div>
+      <div class="recipient-role">${orderData.recipientRole}</div>
+    </div>
+
+    <div class="progress-dots">
+      ${QUESTIONS.map(q => `<div class="progress-dot ${(answers[q.id]||"").trim().length>10?"filled":""}"></div>`).join("")}
+    </div>
+
+    <div class="question-block" style="animation-delay:0s">
+      <label class="question-label" for="contributorName">Your name</label>
+      <span class="question-hint">↳ So the letter can acknowledge who said what</span>
+      <input type="text" class="question-field" id="contributorName" placeholder="Your first name" value="${contributorName}" />
+    </div>
+
+    ${QUESTIONS.map((q, i) => `
+      <div class="question-block" style="animation-delay:${(i+1)*0.06}s">
+        <label class="question-label" for="q_${q.id}">${q.label}</label>
+        <span class="question-hint">↳ ${q.hint}</span>
+        <textarea class="question-field" id="q_${q.id}" data-qid="${q.id}" rows="3" placeholder="${q.placeholder}">${answers[q.id]||""}</textarea>
+        ${(answers[q.id]||"").trim().length>10 ? '<span class="question-answered">✓ noted</span>' : ""}
+      </div>
+    `).join("")}
+
+    <button class="submit-btn" id="submitBtn" ${canSubmit?"":"disabled"}>
+      Add my voice →
+    </button>
+    <p style="font-size:13px;color:var(--ink3);font-style:italic;text-align:center;margin-top:12px">
+      Answer at least 3 questions to submit.
+    </p>`;
+
+  bindFormEvents();
+}
+
+function bindFormEvents() {
+  const nameInput = document.getElementById("contributorName");
+  if (nameInput) {
+    nameInput.addEventListener("input", () => {
+      contributorName = nameInput.value;
+      updateSubmitBtn();
+    });
+  }
+
+  document.querySelectorAll("[data-qid]").forEach(ta => {
+    ta.addEventListener("input", () => {
+      answers[ta.dataset.qid] = ta.value;
+      const block = ta.closest(".question-block");
+      let indicator = block.querySelector(".question-answered");
+      if (ta.value.trim().length > 10) {
+        if (!indicator) {
+          indicator = document.createElement("span");
+          indicator.className = "question-answered";
+          indicator.textContent = "✓ noted";
+          block.appendChild(indicator);
+        }
+      } else if (indicator) {
+        indicator.remove();
+      }
+      document.querySelectorAll(".progress-dot").forEach((dot, i) => {
+        const q = QUESTIONS[i];
+        dot.classList.toggle("filled", (answers[q?.id]||"").trim().length > 10);
+      });
+      updateSubmitBtn();
+    });
+  });
+
+  const submitBtn = document.getElementById("submitBtn");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", submitContribution);
+  }
+}
+
+function updateSubmitBtn() {
+  const answeredCount = QUESTIONS.filter(q => (answers[q.id]||"").trim().length > 10).length;
+  const canSubmit = answeredCount >= 3 && contributorName.trim().length > 1;
+  const btn = document.getElementById("submitBtn");
+  if (btn) btn.disabled = !canSubmit;
+}
+
+async function submitContribution() {
+  const btn = document.getElementById("submitBtn");
+  btn.disabled = true;
+  btn.textContent = "Submitting…";
+
+  try {
+    const res = await fetch("/api/submit-contribution", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        orderId,
+        contributorName,
+        answers,
+      }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById("app").innerHTML = `
+        <div class="success-wrap">
+          <div class="success-icon">✦</div>
+          <h1 class="success-title">Your voice is in.</h1>
+          <p class="success-body">
+            Thank you, ${contributorName}.<br/><br/>
+            Your words will be woven into the letter for ${orderData.recipientName}.
+            Something lasting was just made a little more complete.
+          </p>
+        </div>`;
+    } else {
+      throw new Error(data.error || "Submission failed");
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = "Add my voice →";
+    alert("Something went wrong. Please try again.");
+  }
+}
+
+loadOrder();
+</script>
+</body>
+</html>
