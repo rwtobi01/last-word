@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/app", "destination": "/app.html" },
+    { "source": "/app/", "destination": "/app.html" },
+    { "source": "/unfinished-conversation", "destination": "/unfinished-conversation.html" },
+    { "source": "/unfinished-conversation/", "destination": "/unfinished-conversation.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" }
+  ]
+}
