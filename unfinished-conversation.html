@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Unfinished Conversation — Last Word Letters</title>
+<meta name="description" content="Write the letter you never got to send. Say what was left unsaid — to someone who is no longer here to receive it." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18189065858"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18189065858');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #f5f0e6;
+  color: #1a1510;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+:root {
+  --gold: #9a7a3a;
+  --gold-light: #c9a96e;
+  --gold-pale: #e8d9b8;
+  --bg: #f5f0e6;
+  --bg2: #ede7d8;
+  --bg3: #e4ddd0;
+  --ink: #1a1510;
+  --ink2: #4a3f32;
+  --ink3: #8a7a68;
+  --border: #d4c9b8;
+  --paper: #fdfaf4;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 1.2; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+}
+.logo-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--gold); text-decoration:none; }
+.logo-sub { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--ink3); display:block; margin-top:1px; }
+.back-link { font-size:13px; color:var(--ink3); text-decoration:none; letter-spacing:0.05em; }
+.back-link:hover { color:var(--gold); }
+
+.progress-bar { height: 2px; background: var(--border); position: sticky; top: 57px; z-index: 99; }
+.progress-fill { height: 100%; background: var(--gold); transition: width 0.5s ease; }
+
+main { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* Hero intro block */
+.hero-block {
+  text-align: center;
+  padding: 48px 0 52px;
+  animation: fadeUp 0.6s ease;
+}
+.hero-tag {
+  font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 20px;
+}
+.hero-title {
+  font-size: clamp(36px, 7vw, 56px);
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+.hero-title em { color: var(--gold); }
+.hero-divider {
+  width: 40px; height: 1px; background: var(--gold);
+  margin: 0 auto 20px;
+}
+.hero-body {
+  font-size: 17px; color: var(--ink2); font-style: italic;
+  line-height: 1.85; max-width: 480px; margin: 0 auto 32px;
+}
+.hero-note {
+  font-size: 12px; letter-spacing: 0.12em; color: var(--ink3);
+  text-transform: uppercase;
+}
+.hero-cta {
+  margin-top: 32px;
+  background: var(--gold); color: #fff; border: none;
+  padding: 15px 40px; font-family: 'EB Garamond', serif;
+  font-size: 16px; letter-spacing: 0.04em; cursor: pointer;
+  border-radius: 2px; transition: all 0.2s;
+}
+.hero-cta:hover { background: #7a5e28; }
+
+.step-label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+.section-title { font-size: clamp(28px,5vw,42px); margin-bottom: 10px; }
+.section-title em { color: var(--gold); font-style: italic; }
+.section-sub { font-size: 16px; color: var(--ink2); font-style: italic; line-height: 1.7; margin-bottom: 36px; }
+
+.question-block { margin-bottom: 28px; animation: fadeUp 0.4s ease both; }
+.question-label { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--ink); display: block; margin-bottom: 6px; }
+.question-hint { font-size: 11px; letter-spacing: 0.1em; color: var(--gold); display: block; margin-bottom: 8px; }
+.question-field {
+  width: 100%; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 3px;
+  padding: 12px 14px;
+  font-family: 'EB Garamond', serif; font-size: 15px; line-height: 1.7;
+  color: var(--ink); resize: vertical; outline: none;
+  transition: border-color 0.2s;
+}
+.question-field:focus { border-color: var(--gold); }
+.question-field::placeholder { color: #b0a090; }
+.question-answered { font-size: 11px; color: var(--gold); margin-top: 4px; }
+
+.progress-dots { display: flex; gap: 6px; margin-bottom: 32px; }
+.progress-dot { height: 4px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+.progress-dot.filled { background: var(--gold); }
+
+.tone-grid { display: grid; gap: 8px; margin-bottom: 36px; }
+.tone-btn {
+  background: var(--bg2); border: 1px solid var(--border);
+  padding: 16px 20px; text-align: left; cursor: pointer;
+  font-family: 'EB Garamond', serif; border-radius: 3px;
+  display: flex; align-items: center; gap: 14px;
+  transition: all 0.2s; color: var(--ink);
+}
+.tone-btn:hover, .tone-btn.selected { background: var(--bg3); border-color: var(--gold); }
+.tone-emoji { font-size: 20px; }
+.tone-label { font-size: 16px; }
+.tone-desc { font-size: 13px; color: var(--ink3); font-style: italic; }
+.tone-check { margin-left: auto; color: var(--gold); font-size: 13px; }
+
+.btn-row { display: flex; gap: 12px; margin-top: 8px; }
+.btn-primary {
+  background: var(--gold); color: #fff; border: none;
+  padding: 13px 32px; font-family: 'EB Garamond', serif;
+  font-size: 15px; letter-spacing: 0.04em; cursor: pointer;
+  border-radius: 2px; transition: all 0.2s; flex: 1;
+}
+.btn-primary:hover { background: #7a5e28; }
+.btn-primary:disabled { opacity: 0.4; cursor: default; }
+.btn-ghost {
+  background: transparent; color: var(--ink3);
+  border: 1px solid var(--border); padding: 13px 20px;
+  font-family: 'EB Garamond', serif; font-size: 15px;
+  cursor: pointer; border-radius: 2px; transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.generating { text-align: center; padding: 80px 0; animation: fadeUp 0.5s ease; }
+.spinner { width: 52px; height: 52px; margin: 0 auto 28px; border: 1px solid var(--gold-light); border-top-color: transparent; border-radius: 50%; animation: spin 1.4s linear infinite; }
+.generating h2 { font-size: 26px; color: var(--gold); font-style: italic; margin-bottom: 10px; font-weight: 300; }
+.generating p { color: var(--ink3); font-style: italic; line-height: 1.8; }
+
+.letter-wrap { animation: fadeUp 0.5s ease; }
+.letter-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.letter-divider-line { flex: 1; height: 1px; background: var(--border); }
+.letter-divider-text { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+.letter-paper {
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 2px; padding: clamp(28px,6vw,48px);
+  box-shadow: 0 2px 32px rgba(154,122,58,0.07);
+  position: relative; margin-bottom: 16px;
+  user-select: none; -webkit-user-select: none;
+}
+.letter-paper-quote { position: absolute; top: 8px; left: 18px; font-family: 'Cormorant Garamond', serif; font-size: 80px; color: var(--gold-pale); line-height: 1; pointer-events: none; }
+.letter-text { font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.95; color: #2a1f10; white-space: pre-wrap; position: relative; }
+.cursor { border-right: 1.5px solid var(--gold); animation: blink 1s step-end infinite; }
+
+.lock-notice {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 3px; padding: 14px 18px; margin-bottom: 28px;
+  font-size: 14px; color: var(--ink2); font-style: italic;
+}
+.lock-icon { font-size: 18px; flex-shrink: 0; }
+
+.packages-title { font-size: 22px; margin-bottom: 6px; }
+.packages-sub { color: var(--ink3); font-style: italic; font-size: 15px; margin-bottom: 28px; }
+.package-grid { display: grid; gap: 10px; margin-bottom: 24px; }
+.package-card {
+  background: var(--paper); border: 2px solid var(--border);
+  border-radius: 3px; padding: 20px 22px; cursor: pointer;
+  transition: all 0.2s; display: flex; justify-content: space-between; align-items: center;
+  position: relative;
+}
+.package-card:hover { box-shadow: 0 4px 20px rgba(154,122,58,0.1); }
+.package-card.selected { border-color: var(--gold); background: #fdfaf4; }
+.package-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; margin-bottom: 4px; }
+.package-features { font-size: 13px; color: var(--ink3); font-style: italic; }
+.package-price { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-style: italic; color: var(--gold); flex-shrink: 0; margin-left: 16px; }
+
+.email-label { font-size: 14px; color: var(--ink2); margin-bottom: 8px; display: block; }
+.email-input {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 3px; padding: 12px 14px;
+  font-family: 'EB Garamond', serif; font-size: 15px; color: var(--ink);
+  outline: none; transition: border-color 0.2s; margin-bottom: 20px;
+}
+.email-input:focus { border-color: var(--gold); }
+
+.checkout-btn {
+  width: 100%; background: var(--gold); color: #fff; border: none;
+  padding: 16px; font-family: 'EB Garamond', serif; font-size: 16px;
+  letter-spacing: 0.03em; cursor: pointer; border-radius: 2px;
+  transition: all 0.2s; margin-bottom: 12px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.checkout-btn:hover { background: #7a5e28; }
+.checkout-btn:disabled { opacity: 0.5; cursor: default; }
+.security-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.security-item { font-size: 12px; color: var(--ink3); }
+
+.success-wrap { text-align: center; padding: 60px 0; animation: fadeUp 0.6s ease; }
+.success-icon { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); }
+.success-title { font-size: 36px; color: var(--gold); font-style: italic; font-weight: 300; margin-bottom: 14px; }
+.success-body { color: var(--ink2); font-style: italic; line-height: 1.8; margin-bottom: 40px; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+/* Gentle notice block */
+.gentle-notice {
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 3px; padding: 20px 22px; margin-bottom: 32px;
+  font-size: 14px; color: var(--ink2); font-style: italic; line-height: 1.8;
+  text-align: center;
+}
+.gentle-notice strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 400; color: var(--gold);
+  display: block; margin-bottom: 6px; font-style: normal;
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo-name">
+    Last Word Letters
+    <span class="logo-sub">The letter you owe someone</span>
+  </a>
+  <a href="/" class="back-link">← Back to home</a>
+</nav>
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill" style="width:0%"></div>
+</div>
+<main id="app"></main>
+
+<script>
+const TONES = [
+  { id:"warm", emoji:"🌿", label:"Warm & tender", desc:"Gentle, caring, quietly loving" },
+  { id:"raw", emoji:"💧", label:"Raw & vulnerable", desc:"Honest to the point of discomfort" },
+  { id:"formal", emoji:"🖊️", label:"Formal & dignified", desc:"Measured, respectful, composed" },
+  { id:"apologetic", emoji:"🤍", label:"Deeply apologetic", desc:"Accountable, without defence" },
+  { id:"peaceful", emoji:"🕊️", label:"Peaceful & releasing", desc:"Letting go with love, not loss" },
+  { id:"spiritual", emoji:"✨", label:"Spiritual & faithful", desc:"Rooted in hope, surrender, and eternity" },
+  { id:"tender", emoji:"🌒", label:"Tender & unfinished", desc:"For the things that were never resolved" },
+];
+
+const PACKAGE = {
+  id: "unfinished",
+  label: "The Unfinished Conversation",
+  price: "£65",
+  features: "Complete personalised letter • Delivered privately to your inbox • Print-ready format • Yours to keep forever"
+};
+
+const QUESTIONS = [
+  {
+    id: "who",
+    label: "Who are you writing to?",
+    hint: "Their name, and who they were to you.",
+    placeholder: "e.g. My father, David. He died three years ago and we hadn't spoken in two."
+  },
+  {
+    id: "whathappened",
+    label: "What was left unfinished between you?",
+    hint: "Not the whole story. Just the part that still sits with you.",
+    placeholder: "e.g. I never told him I understood why he left. I just let him go thinking I didn't."
+  },
+  {
+    id: "lasttime",
+    label: "What was the last real exchange you had with them?",
+    hint: "A conversation, a look, a message — whatever you carry.",
+    placeholder: "e.g. The last time we spoke was on the phone. He sounded tired. I said I had to go."
+  },
+  {
+    id: "unsaid",
+    label: "What do you most wish they could hear you say?",
+    hint: "This is the heart of your letter.",
+    placeholder: "e.g. That I forgive him. That I know he tried. That I'm sorry I waited so long."
+  },
+  {
+    id: "memory",
+    label: "Share one specific memory of them.",
+    hint: "A single vivid moment says more than years of summary.",
+    placeholder: "e.g. He used to hum while he made tea. I didn't know I'd miss that."
+  },
+  {
+    id: "release",
+    label: "Is there anything this letter is meant to release?",
+    hint: "Guilt, grief, anger, love — name it if you can.",
+    placeholder: "e.g. The guilt of not being there. The anger I never let myself feel."
+  },
+];
+
+let state = {
+  step: "intro",
+  answers: {},
+  tone: null,
+  letter: "",
+  displayedLetter: "",
+  email: "",
+};
+
+function render() {
+  const app = document.getElementById("app");
+  const progress = { intro:0, intake:30, tone:58, generating:72, result:82, package:95, success:100 };
+  document.getElementById("progressFill").style.width = (progress[state.step]||0) + "%";
+  switch(state.step) {
+    case "intro":     app.innerHTML = renderIntro(); break;
+    case "intake":    app.innerHTML = renderIntake(); break;
+    case "tone":      app.innerHTML = renderTone(); break;
+    case "generating":app.innerHTML = renderGenerating(); break;
+    case "result":    app.innerHTML = renderResult(); break;
+    case "package":   app.innerHTML = renderPackage(); break;
+    case "success":   app.innerHTML = renderSuccess(); break;
+  }
+  bindEvents();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderIntro() {
+  return `
+    <div class="hero-block">
+      <span class="hero-tag">Last Word Letters — A letter for closure</span>
+      <h1 class="hero-title">The Unfinished<br><em>Conversation</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-body">
+        Some conversations never got to end.<br/>
+        Not the way they should have.<br/><br/>
+        This letter is for the person who is no longer here —
+        but who still deserves to hear what you could never bring yourself to say.
+      </p>
+      <p class="hero-note">Private · Personal · Yours alone</p>
+      <button class="hero-cta" data-action="go-intake">Begin writing →</button>
+    </div>`;
+}
+
+function renderIntake() {
+  const answered = QUESTIONS.filter(q => (state.answers[q.id]||"").trim().length > 10).length;
+  const needed = 4;
+  const canContinue = answered >= needed;
+  return `
+    <span class="step-label">Step 1 of 3 — Your story</span>
+    <h1 class="section-title">Tell us what<br><em>happened.</em></h1>
+    <p class="section-sub">Answer at least ${needed} questions honestly. Don't worry about the words — that's our part.</p>
+    <div class="progress-dots">
+      ${QUESTIONS.map(q => `<div class="progress-dot ${(state.answers[q.id]||"").trim().length>10?"filled":""}"></div>`).join("")}
+    </div>
+    ${QUESTIONS.map((q,i) => `
+      <div class="question-block" style="animation-delay:${i*0.06}s">
+        <label class="question-label" for="q_${q.id}">${q.label}</label>
+        <span class="question-hint">↳ ${q.hint}</span>
+        <textarea class="question-field" id="q_${q.id}" data-qid="${q.id}" rows="3" placeholder="${q.placeholder}">${state.answers[q.id]||""}</textarea>
+        ${(state.answers[q.id]||"").trim().length>10 ? '<span class="question-answered">✓ noted</span>' : ""}
+      </div>
+    `).join("")}
+    <div class="btn-row">
+      <button class="btn-ghost" data-action="go-intro">← Back</button>
+      <button class="btn-primary" data-action="go-tone" ${canContinue?"":"disabled"}>Choose tone →</button>
+    </div>`;
+}
+
+function renderTone() {
+  return `
+    <span class="step-label">Step 2 of 3 — Voice</span>
+    <h1 class="section-title">How should it<br><em>feel to read?</em></h1>
+    <p class="section-sub">Choose the emotional register for your letter.</p>
+    <div class="tone-grid">
+      ${TONES.map(t => `
+        <button class="tone-btn ${state.tone===t.id?"selected":""}" data-tone="${t.id}">
+          <span class="tone-emoji">${t.emoji}</span>
+          <span>
+            <span class="tone-label" style="display:block">${t.label}</span>
+            <span class="tone-desc">${t.desc}</span>
+          </span>
+          ${state.tone===t.id ? '<span class="tone-check">✓</span>' : ""}
+        </button>
+      `).join("")}
+    </div>
+    <div class="btn-row">
+      <button class="btn-ghost" data-action="go-intake">← Back</button>
+      <button class="btn-primary" data-action="generate" ${state.tone?"":"disabled"}>Write my letter →</button>
+    </div>`;
+}
+
+function renderGenerating() {
+  return `
+    <div class="generating">
+      <div class="spinner"></div>
+      <h2>Finding your words…</h2>
+      <p>Reading everything you shared.<br>This takes just a moment.</p>
+    </div>`;
+}
+
+function renderResult() {
+  return `
+    <div class="letter-wrap">
+      <div class="letter-divider">
+        <div class="letter-divider-line"></div>
+        <span class="letter-divider-text">✦ Your letter preview</span>
+        <div class="letter-divider-line"></div>
+      </div>
+      <div class="letter-paper">
+        <div class="letter-paper-quote">"</div>
+        <div class="letter-text" id="letterText">${state.displayedLetter}<span class="cursor"> </span></div>
+      </div>
+      <div class="lock-notice">
+        <span class="lock-icon">🔒</span>
+        <span>Your full letter will be delivered to your inbox after payment — private, print-ready, and yours alone.</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn-ghost" data-action="go-tone">← Revise tone</button>
+        <button class="btn-primary" data-action="go-package">Get this letter →</button>
+      </div>
+    </div>`;
+}
+
+function renderPackage() {
+  return `
+    <span class="step-label">Step 3 of 3 — Delivery</span>
+    <h2 class="packages-title">Receive your letter.</h2>
+    <p class="packages-sub">Private, complete, and written for you alone.</p>
+
+    <div class="gentle-notice">
+      <strong>This letter is for you.</strong>
+      It will be delivered privately to your inbox. No one else will see it.
+      Keep it, print it, or simply let it be what it needs to be.
+    </div>
+
+    <div class="package-grid">
+      <div class="package-card selected">
+        <div>
+          <div class="package-name">${PACKAGE.label}</div>
+          <div class="package-features">${PACKAGE.features}</div>
+        </div>
+        <div class="package-price">${PACKAGE.price}</div>
+      </div>
+    </div>
+
+    <label class="email-label">Your email — we'll send the letter here</label>
+    <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" value="${state.email}" />
+    <button class="checkout-btn" id="checkoutBtn" ${state.email && state.email.includes("@") ? "" : "disabled"}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Pay ${PACKAGE.price} securely with Stripe
+    </button>
+    <div class="security-row">
+      <span class="security-item">🔒 256-bit encryption</span>
+      <span class="security-item">🔒 No card stored</span>
+      <span class="security-item">🔒 Instant delivery</span>
+    </div>
+    <div style="margin-top:20px">
+      <button class="btn-ghost" style="width:100%;text-align:center" data-action="go-result">← Back to preview</button>
+    </div>`;
+}
+
+function renderSuccess() {
+  return `
+    <div class="success-wrap">
+      <div class="success-icon">✦</div>
+      <h1 class="success-title">Your letter is on its way.</h1>
+      <p class="success-body">
+        Check your inbox — it should arrive within a few minutes.<br/><br/>
+        You did something brave today. The words are sent. Let that be enough.
+      </p>
+      <button class="btn-primary" style="max-width:280px;margin:0 auto;display:block" data-action="start-over">Write another letter →</button>
+    </div>`;
+}
+
+function bindEvents() {
+  document.querySelectorAll("[data-qid]").forEach(ta => {
+    ta.addEventListener("input", () => {
+      state.answers[ta.dataset.qid] = ta.value;
+      const block = ta.closest(".question-block");
+      let indicator = block.querySelector(".question-answered");
+      if (ta.value.trim().length > 10) {
+        if (!indicator) {
+          indicator = document.createElement("span");
+          indicator.className = "question-answered";
+          indicator.textContent = "✓ noted";
+          block.appendChild(indicator);
+        }
+        const answered = QUESTIONS.filter(q => (state.answers[q.id]||"").trim().length > 10).length;
+        document.querySelectorAll(".progress-dot").forEach((dot, i) => {
+          const q = QUESTIONS[i];
+          dot.classList.toggle("filled", (state.answers[q?.id]||"").trim().length > 10);
+        });
+        const goToneBtn = document.querySelector("[data-action='go-tone']");
+        if (goToneBtn) goToneBtn.disabled = answered < 4;
+      } else if (indicator) {
+        indicator.remove();
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-tone]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      state.tone = btn.dataset.tone;
+      render();
+    });
+  });
+
+  const emailInput = document.getElementById("emailInput");
+  if (emailInput) {
+    emailInput.addEventListener("input", () => {
+      state.email = emailInput.value;
+      const btn = document.getElementById("checkoutBtn");
+      if (btn) btn.disabled = !state.email.includes("@");
+    });
+  }
+
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", async () => {
+      if (!state.email) return;
+      checkoutBtn.disabled = true;
+      checkoutBtn.textContent = "Redirecting to payment…";
+
+      try {
+        const tone = TONES.find(t => t.id === state.tone);
+        const metadata = {
+          packageId: "unfinished",
+          packageName: PACKAGE.label,
+          occasionLabel: "The Unfinished Conversation",
+          toneLabel: tone?.label || "",
+        };
+        QUESTIONS.forEach((q, i) => {
+          const answer = state.answers[q.id]?.trim();
+          if (answer) {
+            metadata[`q${i}_label`] = q.label.slice(0, 200);
+            metadata[`q${i}_answer`] = answer.slice(0, 400);
+          }
+        });
+
+        const res = await fetch("/api/create-checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: state.email,
+            packageId: "unfinished",
+            packageName: PACKAGE.label,
+            occasionLabel: "The Unfinished Conversation",
+            toneLabel: tone?.label,
+            metadata,
+          }),
+        });
+
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error(data.error || "No URL returned");
+        }
+      } catch (err) {
+        console.error(err);
+        checkoutBtn.disabled = false;
+        checkoutBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Pay ${PACKAGE.price} securely with Stripe`;
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+
+  const actions = {
+    "go-intro":   () => { state.step = "intro"; render(); },
+    "go-intake":  () => { state.step = "intake"; render(); },
+    "go-tone":    () => { state.step = "tone"; render(); },
+    "go-result":  () => { state.step = "result"; render(); },
+    "go-package": () => { state.step = "package"; render(); },
+    "generate":   generateLetter,
+    "start-over": () => {
+      state = { step:"intro", answers:{}, tone:null, letter:"", displayedLetter:"", email:"" };
+      render();
+    },
+  };
+
+  document.querySelectorAll("[data-action]").forEach(el => {
+    el.addEventListener("click", () => {
+      const action = actions[el.dataset.action];
+      if (action) action();
+    });
+  });
+}
+
+async function generateLetter() {
+  state.step = "generating";
+  render();
+
+  const tone = TONES.find(t => t.id === state.tone);
+
+  try {
+    const response = await fetch("/api/generate-letter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        occasion: "The Unfinished Conversation — a letter to someone who has passed, for the purpose of closure",
+        tone: tone?.label,
+        answers: state.answers,
+        questions: QUESTIONS,
+      }),
+    });
+
+    const data = await response.json();
+    const text = data.letter || "We couldn't generate your letter right now. Please try again.";
+    state.letter = text;
+    state.displayedLetter = "";
+    state.step = "result";
+    render();
+
+    let i = 0;
+    const el = document.getElementById("letterText");
+    const interval = setInterval(() => {
+      i += 4;
+      state.displayedLetter = text.slice(0, i);
+      if (el) el.innerHTML = state.displayedLetter + '<span class="cursor"> </span>';
+      if (i >= text.length) {
+        state.displayedLetter = text;
+        if (el) el.innerHTML = text + '<span class="cursor"> </span>';
+        clearInterval(interval);
+      }
+    }, 14);
+
+  } catch (e) {
+    state.letter = "We couldn't reach the letter writer right now. Please try again.";
+    state.displayedLetter = state.letter;
+    state.step = "result";
+    render();
+  }
+}
+
+render();
+</script>
+</body>
+</html>
