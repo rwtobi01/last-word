@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>One Voice, Many Hearts — Last Word Letters</title>
+<meta name="description" content="A single letter, woven from many voices. For the farewell, the tribute, the thank you that one person alone could never say." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18189065858"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18189065858');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #f5f0e6;
+  color: #1a1510;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+:root {
+  --gold: #9a7a3a;
+  --gold-light: #c9a96e;
+  --gold-pale: #e8d9b8;
+  --bg: #f5f0e6;
+  --bg2: #ede7d8;
+  --bg3: #e4ddd0;
+  --ink: #1a1510;
+  --ink2: #4a3f32;
+  --ink3: #8a7a68;
+  --border: #d4c9b8;
+  --paper: #fdfaf4;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 1.2; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+}
+.logo-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--gold); text-decoration:none; }
+.logo-sub { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--ink3); display:block; margin-top:1px; }
+.back-link { font-size:13px; color:var(--ink3); text-decoration:none; letter-spacing:0.05em; }
+.back-link:hover { color:var(--gold); }
+
+.progress-bar { height: 2px; background: var(--border); position: sticky; top: 57px; z-index: 99; }
+.progress-fill { height: 100%; background: var(--gold); transition: width 0.5s ease; }
+
+main { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; }
+
+.step-label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+.section-title { font-size: clamp(28px,5vw,42px); margin-bottom: 10px; }
+.section-title em { color: var(--gold); font-style: italic; }
+.section-sub { font-size: 16px; color: var(--ink2); font-style: italic; line-height: 1.7; margin-bottom: 36px; }
+
+.hero-block { text-align: center; padding: 48px 0 52px; animation: fadeUp 0.6s ease; }
+.hero-tag { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px; }
+.hero-title { font-size: clamp(34px, 7vw, 54px); font-style: italic; color: var(--ink); margin-bottom: 20px; line-height: 1.15; }
+.hero-title em { color: var(--gold); }
+.hero-divider { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 20px; }
+.hero-body { font-size: 17px; color: var(--ink2); font-style: italic; line-height: 1.85; max-width: 480px; margin: 0 auto 32px; }
+.hero-cta { margin-top: 32px; background: var(--gold); color: #fff; border: none; padding: 15px 40px; font-family: 'EB Garamond', serif; font-size: 16px; letter-spacing: 0.04em; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+.hero-cta:hover { background: #7a5e28; }
+
+.how-grid { display: grid; gap: 16px; margin-bottom: 40px; }
+.how-item { background: var(--paper); border: 1px solid var(--border); border-radius: 3px; padding: 20px 22px; display: flex; gap: 18px; align-items: flex-start; }
+.how-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-style: italic; color: var(--gold); flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.how-label { font-size: 16px; font-family: 'Cormorant Garamond', serif; margin-bottom: 4px; }
+.how-desc { font-size: 13px; color: var(--ink3); font-style: italic; line-height: 1.7; }
+
+.question-block { margin-bottom: 28px; animation: fadeUp 0.4s ease both; }
+.question-label { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-style: italic; color: var(--ink); display: block; margin-bottom: 6px; }
+.question-hint { font-size: 11px; letter-spacing: 0.1em; color: var(--gold); display: block; margin-bottom: 8px; }
+.question-field {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 12px 14px; font-family: 'EB Garamond', serif; font-size: 15px; line-height: 1.7;
+  color: var(--ink); resize: vertical; outline: none; transition: border-color 0.2s;
+}
+.question-field:focus { border-color: var(--gold); }
+.question-field::placeholder { color: #b0a090; }
+.select-field {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 12px 14px; font-family: 'EB Garamond', serif; font-size: 15px;
+  color: var(--ink); outline: none; transition: border-color 0.2s; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a7a3a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+}
+.select-field:focus { border-color: var(--gold); }
+
+.btn-row { display: flex; gap: 12px; margin-top: 8px; }
+.btn-primary { background: var(--gold); color: #fff; border: none; padding: 13px 32px; font-family: 'EB Garamond', serif; font-size: 15px; letter-spacing: 0.04em; cursor: pointer; border-radius: 2px; transition: all 0.2s; flex: 1; }
+.btn-primary:hover { background: #7a5e28; }
+.btn-primary:disabled { opacity: 0.4; cursor: default; }
+.btn-ghost { background: transparent; color: var(--ink3); border: 1px solid var(--border); padding: 13px 20px; font-family: 'EB Garamond', serif; font-size: 15px; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.package-card {
+  background: var(--paper); border: 2px solid var(--gold);
+  border-radius: 3px; padding: 24px 22px; margin-bottom: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.package-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 4px; }
+.package-features { font-size: 13px; color: var(--ink3); font-style: italic; line-height: 1.7; }
+.package-price { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-style: italic; color: var(--gold); flex-shrink: 0; margin-left: 16px; }
+
+.email-label { font-size: 14px; color: var(--ink2); margin-bottom: 8px; display: block; }
+.email-input { width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 3px; padding: 12px 14px; font-family: 'EB Garamond', serif; font-size: 15px; color: var(--ink); outline: none; transition: border-color 0.2s; margin-bottom: 20px; }
+.email-input:focus { border-color: var(--gold); }
+
+.checkout-btn { width: 100%; background: var(--gold); color: #fff; border: none; padding: 16px; font-family: 'EB Garamond', serif; font-size: 16px; letter-spacing: 0.03em; cursor: pointer; border-radius: 2px; transition: all 0.2s; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.checkout-btn:hover { background: #7a5e28; }
+.checkout-btn:disabled { opacity: 0.5; cursor: default; }
+.security-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.security-item { font-size: 12px; color: var(--ink3); }
+
+.generating { text-align: center; padding: 80px 0; animation: fadeUp 0.5s ease; }
+.spinner { width: 52px; height: 52px; margin: 0 auto 28px; border: 1px solid var(--gold-light); border-top-color: transparent; border-radius: 50%; animation: spin 1.4s linear infinite; }
+.generating h2 { font-size: 26px; color: var(--gold); font-style: italic; margin-bottom: 10px; font-weight: 300; }
+.generating p { color: var(--ink3); font-style: italic; line-height: 1.8; }
+
+.success-wrap { text-align: center; padding: 60px 0; animation: fadeUp 0.6s ease; }
+.success-icon { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); }
+.success-title { font-size: 36px; color: var(--gold); font-style: italic; font-weight: 300; margin-bottom: 14px; }
+.success-body { color: var(--ink2); font-style: italic; line-height: 1.8; margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto; }
+
+.link-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 3px; padding: 16px 18px; margin-bottom: 24px; }
+.link-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+.link-url { font-family: 'EB Garamond', serif; font-size: 14px; color: var(--ink2); word-break: break-all; margin-bottom: 10px; }
+.copy-btn { background: var(--gold); color: #fff; border: none; padding: 8px 20px; font-family: 'EB Garamond', serif; font-size: 13px; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+.copy-btn:hover { background: #7a5e28; }
+
+.instructions-block { background: var(--paper); border: 1px solid var(--border); border-radius: 3px; padding: 20px 22px; margin-bottom: 28px; text-align: left; }
+.instructions-block h3 { font-size: 18px; margin-bottom: 12px; color: var(--gold); font-style: italic; }
+.instructions-block ol { padding-left: 20px; }
+.instructions-block li { font-size: 14px; color: var(--ink2); font-style: italic; line-height: 1.8; margin-bottom: 6px; }
+
+.occasion-grid { display: grid; gap: 8px; margin-bottom: 28px; }
+.occasion-btn { background: var(--bg2); border: 1px solid var(--border); padding: 14px 18px; text-align: left; cursor: pointer; font-family: 'EB Garamond', serif; border-radius: 3px; display: flex; align-items: center; gap: 14px; transition: all 0.2s; color: var(--ink); }
+.occasion-btn:hover, .occasion-btn.selected { background: var(--bg3); border-color: var(--gold); }
+.occasion-emoji { font-size: 20px; flex-shrink: 0; }
+.occasion-label { font-size: 16px; display: block; }
+.occasion-hint { font-size: 13px; color: var(--ink3); font-style: italic; display: block; margin-top: 2px; }
+.occasion-check { margin-left: auto; color: var(--gold); font-size: 13px; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo-name">
+    Last Word Letters
+    <span class="logo-sub">The letter you owe someone</span>
+  </a>
+  <a href="/" class="back-link">← Back to home</a>
+</nav>
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill" style="width:0%"></div>
+</div>
+<main id="app"></main>
+
+<script>
+const OCCASIONS = [
+  { id:"farewell", emoji:"🖊️", label:"Workplace farewell", hint:"For a colleague, manager, or team member leaving" },
+  { id:"retirement", emoji:"✨", label:"Retirement tribute", hint:"For someone ending a career with grace" },
+  { id:"pastor", emoji:"✝️", label:"Pastoral tribute", hint:"For a pastor, minister, or faith leader" },
+  { id:"family", emoji:"🌱", label:"Family tribute", hint:"For a parent, grandparent, or family elder" },
+  { id:"memorial", emoji:"🕊️", label:"Memorial letter", hint:"To honour someone who has passed" },
+  { id:"milestone", emoji:"🌟", label:"Milestone celebration", hint:"Birthday, anniversary, or life achievement" },
+];
+
+let state = {
+  step: "intro",
+  occasion: null,
+  recipientName: "",
+  recipientRole: "",
+  yourName: "",
+  yourRelationship: "",
+  context: "",
+  email: "",
+  orderId: null,
+  contributorLink: null,
+};
+
+function render() {
+  const app = document.getElementById("app");
+  const progress = { intro:0, occasion:20, details:45, payment:70, processing:82, success:100 };
+  document.getElementById("progressFill").style.width = (progress[state.step]||0) + "%";
+  switch(state.step) {
+    case "intro":      app.innerHTML = renderIntro(); break;
+    case "occasion":   app.innerHTML = renderOccasion(); break;
+    case "details":    app.innerHTML = renderDetails(); break;
+    case "payment":    app.innerHTML = renderPayment(); break;
+    case "processing": app.innerHTML = renderProcessing(); break;
+    case "success":    app.innerHTML = renderSuccess(); break;
+  }
+  bindEvents();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderIntro() {
+  return `
+    <div class="hero-block">
+      <span class="hero-tag">Last Word Letters — A letter from many</span>
+      <h1 class="hero-title">One Voice,<br /><em>Many Hearts.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-body">
+        Some farewells are too big for one person to carry.<br /><br />
+        This letter gathers what everyone feels — the memories, the gratitude, the things that are hard to say in a room — and weaves them into one letter worthy of the moment.
+      </p>
+      <div class="how-grid" style="text-align:left;margin-top:32px">
+        <div class="how-item">
+          <span class="how-num">1</span>
+          <div>
+            <div class="how-label">You start it</div>
+            <div class="how-desc">Tell us about the person and the occasion. Pay once. We generate a unique link for your group.</div>
+          </div>
+        </div>
+        <div class="how-item">
+          <span class="how-num">2</span>
+          <div>
+            <div class="how-label">Everyone contributes</div>
+            <div class="how-desc">Share the link. Each person answers a few short questions about the person being honoured.</div>
+          </div>
+        </div>
+        <div class="how-item">
+          <span class="how-num">3</span>
+          <div>
+            <div class="how-label">One letter arrives</div>
+            <div class="how-desc">When you're ready, generate the letter. All voices woven into one — delivered to your inbox.</div>
+          </div>
+        </div>
+      </div>
+      <button class="hero-cta" style="margin-top:36px" data-action="go-occasion">Begin →</button>
+    </div>`;
+}
+
+function renderOccasion() {
+  return `
+    <span class="step-label">Step 1 of 3 — Occasion</span>
+    <h1 class="section-title">What is this<br /><em>letter for?</em></h1>
+    <p class="section-sub">Choose the moment you're marking together.</p>
+    <div class="occasion-grid">
+      ${OCCASIONS.map(o => `
+        <button class="occasion-btn ${state.occasion?.id===o.id?'selected':''}" data-occasion="${o.id}">
+          <span class="occasion-emoji">${o.emoji}</span>
+          <span>
+            <span class="occasion-label">${o.label}</span>
+            <span class="occasion-hint">${o.hint}</span>
+          </span>
+          ${state.occasion?.id===o.id ? '<span class="occasion-check">✓</span>' : ''}
+        </button>
+      `).join("")}
+    </div>
+    <div class="btn-row">
+      <button class="btn-ghost" data-action="go-intro">← Back</button>
+      <button class="btn-primary" data-action="go-details" ${state.occasion?"":"disabled"}>Continue →</button>
+    </div>`;
+}
+
+function renderDetails() {
+  return `
+    <span class="step-label">Step 2 of 3 — About them</span>
+    <h1 class="section-title">Tell us about<br /><em>the person.</em></h1>
+    <p class="section-sub">This helps us frame the letter and guides contributors.</p>
+
+    <div class="question-block">
+      <label class="question-label" for="recipientName">What is their name?</label>
+      <span class="question-hint">↳ First name, or whatever the group calls them</span>
+      <input type="text" class="question-field" id="recipientName" placeholder="e.g. Margaret, Pastor John, Grandad Ray" value="${state.recipientName}" />
+    </div>
+
+    <div class="question-block">
+      <label class="question-label" for="recipientRole">What is their role or relationship to the group?</label>
+      <span class="question-hint">↳ How contributors know them</span>
+      <input type="text" class="question-field" id="recipientRole" placeholder="e.g. Our team manager for 12 years, Our grandmother, Senior Pastor" value="${state.recipientRole}" />
+    </div>
+
+    <div class="question-block">
+      <label class="question-label" for="context">Anything important we should know about this occasion?</label>
+      <span class="question-hint">↳ Optional — dates, details, context that would help the letter</span>
+      <textarea class="question-field" id="context" rows="3" placeholder="e.g. She's retiring after 30 years in the NHS. We want the letter to be warm but not too formal.">${state.context}</textarea>
+    </div>
+
+    <div class="question-block">
+      <label class="question-label" for="yourName">Your name</label>
+      <span class="question-hint">↳ You're organising this — how should we address you?</span>
+      <input type="text" class="question-field" id="yourName" placeholder="Your first name" value="${state.yourName}" />
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" data-action="go-occasion">← Back</button>
+      <button class="btn-primary" data-action="go-payment" ${state.recipientName && state.recipientRole && state.yourName ? "" : "disabled"}>Continue →</button>
+    </div>`;
+}
+
+function renderPayment() {
+  return `
+    <span class="step-label">Step 3 of 3 — Delivery</span>
+    <h2 style="font-size:24px;margin-bottom:8px">Almost there.</h2>
+    <p class="section-sub">One payment unlocks your contributor link and the final letter.</p>
+
+    <div class="package-card">
+      <div>
+        <div class="package-name">One Voice, Many Hearts</div>
+        <div class="package-features">
+          Unique contributor link for your group<br/>
+          Unlimited contributions<br/>
+          One beautifully crafted letter<br/>
+          Delivered privately to your inbox
+        </div>
+      </div>
+      <div class="package-price">£55</div>
+    </div>
+
+    <label class="email-label">Your email — we'll send the contributor link and letter here</label>
+    <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" value="${state.email}" />
+
+    <button class="checkout-btn" id="checkoutBtn" ${state.email && state.email.includes("@") ? "" : "disabled"}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Pay £55 securely with Stripe
+    </button>
+    <div class="security-row">
+      <span class="security-item">🔒 256-bit encryption</span>
+      <span class="security-item">🔒 No card stored</span>
+      <span class="security-item">🔒 Instant delivery</span>
+    </div>
+    <div style="margin-top:20px">
+      <button class="btn-ghost" style="width:100%;text-align:center" data-action="go-details">← Back</button>
+    </div>`;
+}
+
+function renderProcessing() {
+  return `
+    <div class="generating">
+      <div class="spinner"></div>
+      <h2>Setting everything up…</h2>
+      <p>Creating your contributor link.<br/>This takes just a moment.</p>
+    </div>`;
+}
+
+function renderSuccess() {
+  const link = state.contributorLink || `https://lastwordletters.com/contribute?id=${state.orderId}`;
+  return `
+    <div class="success-wrap">
+      <div class="success-icon">✦</div>
+      <h1 class="success-title">Your link is ready.</h1>
+      <p class="success-body">
+        Share it with everyone who wants to contribute.<br/>
+        When you're ready, come back here to generate the final letter.
+      </p>
+
+      <div class="link-box">
+        <span class="link-label">✦ Your contributor link</span>
+        <div class="link-url" id="contributorLinkDisplay">${link}</div>
+        <button class="copy-btn" id="copyLinkBtn">Copy link</button>
+      </div>
+
+      <div class="instructions-block">
+        <h3>What happens next</h3>
+        <ol>
+          <li>Share the link above with everyone in your group</li>
+          <li>Each person clicks the link and answers a few short questions</li>
+          <li>When everyone has contributed, tap the button below to generate the letter</li>
+          <li>The finished letter will be sent to <strong>${state.email}</strong></li>
+        </ol>
+      </div>
+
+      <button class="btn-primary" id="generateBtn" style="margin-bottom:12px">
+        Generate our letter →
+      </button>
+      <p style="font-size:13px;color:var(--ink3);font-style:italic;text-align:center">
+        You can do this whenever you're ready — there's no deadline.
+      </p>
+    </div>`;
+}
+
+function bindEvents() {
+  document.querySelectorAll("[data-occasion]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      state.occasion = OCCASIONS.find(o => o.id === btn.dataset.occasion);
+      render();
+    });
+  });
+
+  ["recipientName","recipientRole","context","yourName"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("input", () => {
+        state[id] = el.value;
+        const continueBtn = document.querySelector("[data-action='go-payment']");
+        if (continueBtn) {
+          continueBtn.disabled = !(state.recipientName && state.recipientRole && state.yourName);
+        }
+      });
+    }
+  });
+
+  const emailInput = document.getElementById("emailInput");
+  if (emailInput) {
+    emailInput.addEventListener("input", () => {
+      state.email = emailInput.value;
+      const btn = document.getElementById("checkoutBtn");
+      if (btn) btn.disabled = !state.email.includes("@");
+    });
+  }
+
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", async () => {
+      if (!state.email) return;
+      checkoutBtn.disabled = true;
+      checkoutBtn.textContent = "Redirecting to payment…";
+      try {
+        const res = await fetch("/api/create-checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: state.email,
+            packageId: "collective",
+            packageName: "One Voice, Many Hearts",
+            occasionLabel: state.occasion?.label || "",
+            toneLabel: "",
+            metadata: {
+              packageId: "collective",
+              recipientName: state.recipientName,
+              recipientRole: state.recipientRole,
+              context: state.context,
+              organizerName: state.yourName,
+              occasionId: state.occasion?.id || "",
+              occasionLabel: state.occasion?.label || "",
+            }
+          }),
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error(data.error || "No URL");
+        }
+      } catch (err) {
+        console.error(err);
+        checkoutBtn.disabled = false;
+        checkoutBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Pay £55 securely with Stripe`;
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+
+  const copyBtn = document.getElementById("copyLinkBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      const link = document.getElementById("contributorLinkDisplay")?.textContent;
+      if (link) {
+        navigator.clipboard.writeText(link).then(() => {
+          copyBtn.textContent = "Copied ✓";
+          setTimeout(() => copyBtn.textContent = "Copy link", 2000);
+        });
+      }
+    });
+  }
+
+  const generateBtn = document.getElementById("generateBtn");
+  if (generateBtn) {
+    generateBtn.addEventListener("click", async () => {
+      generateBtn.disabled = true;
+      generateBtn.textContent = "Generating your letter…";
+      try {
+        const res = await fetch("/api/generate-collective", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orderId: state.orderId, email: state.email }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          generateBtn.textContent = "✓ Letter sent to your inbox";
+          generateBtn.style.background = "#4a7a3a";
+        } else {
+          throw new Error(data.error || "Generation failed");
+        }
+      } catch (err) {
+        generateBtn.disabled = false;
+        generateBtn.textContent = "Generate our letter →";
+        alert("Something went wrong generating the letter. Please try again.");
+      }
+    });
+  }
+
+  const actions = {
+    "go-intro":    () => { state.step = "intro"; render(); },
+    "go-occasion": () => { state.step = "occasion"; render(); },
+    "go-details":  () => { state.step = "details"; render(); },
+    "go-payment":  () => { state.step = "payment"; render(); },
+  };
+
+  document.querySelectorAll("[data-action]").forEach(el => {
+    el.addEventListener("click", () => {
+      const action = actions[el.dataset.action];
+      if (action) action();
+    });
+  });
+}
+
+// Check if returning from Stripe payment success
+const params = new URLSearchParams(window.location.search);
+const sessionId = params.get("session_id");
+const orderId = params.get("order_id");
+
+if (sessionId && orderId) {
+  state.orderId = orderId;
+  state.contributorLink = `https://lastwordletters.com/contribute?id=${orderId}`;
+  state.step = "success";
+}
+
+render();
+</script>
+</body>
+</html>
