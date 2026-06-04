@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Free Letter Opening — Last Word Letters</title>
+<meta name="description" content="Answer two questions. Get the opening paragraph of your letter — free. No card. No commitment. Just the words you've been looking for." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18189065858"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18189065858');
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #f5f0e6;
+  color: #1a1510;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+:root {
+  --gold: #9a7a3a;
+  --gold-light: #c9a96e;
+  --gold-pale: #e8d9b8;
+  --bg: #f5f0e6;
+  --bg2: #ede7d8;
+  --bg3: #e4ddd0;
+  --ink: #1a1510;
+  --ink2: #4a3f32;
+  --ink3: #8a7a68;
+  --border: #d4c9b8;
+  --paper: #fdfaf4;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 1.2; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+}
+.logo-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--gold); text-decoration:none; }
+.logo-sub { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--ink3); display:block; margin-top:1px; }
+.back-link { font-size:13px; color:var(--ink3); text-decoration:none; letter-spacing:0.05em; }
+.back-link:hover { color:var(--gold); }
+
+main { max-width: 600px; margin: 0 auto; padding: 48px 24px 80px; }
+
+.hero-block { text-align: center; padding: 40px 0 48px; animation: fadeUp 0.6s ease; }
+.hero-tag { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.hero-title { font-size: clamp(32px, 6vw, 50px); font-style: italic; color: var(--ink); margin-bottom: 18px; line-height: 1.2; }
+.hero-title em { color: var(--gold); }
+.hero-divider { width: 36px; height: 1px; background: var(--gold); margin: 0 auto 18px; }
+.hero-body { font-size: 16px; color: var(--ink2); font-style: italic; line-height: 1.85; max-width: 420px; margin: 0 auto; }
+.hero-note { font-size: 12px; letter-spacing: 0.12em; color: var(--ink3); text-transform: uppercase; margin-top: 18px; display: block; }
+
+.form-block { animation: fadeUp 0.5s ease 0.1s both; }
+
+.question-block { margin-bottom: 28px; }
+.question-label { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--ink); display: block; margin-bottom: 6px; }
+.question-hint { font-size: 11px; letter-spacing: 0.1em; color: var(--gold); display: block; margin-bottom: 8px; }
+.question-field {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 12px 14px; font-family: 'EB Garamond', serif; font-size: 15px; line-height: 1.7;
+  color: var(--ink); resize: vertical; outline: none; transition: border-color 0.2s;
+}
+.question-field:focus { border-color: var(--gold); }
+.question-field::placeholder { color: #b0a090; }
+
+.email-label { font-size: 14px; color: var(--ink2); margin-bottom: 8px; display: block; }
+.email-input {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 12px 14px; font-family: 'EB Garamond', serif; font-size: 15px; color: var(--ink);
+  outline: none; transition: border-color 0.2s; margin-bottom: 8px;
+}
+.email-input:focus { border-color: var(--gold); }
+.email-note { font-size: 12px; color: var(--ink3); font-style: italic; margin-bottom: 20px; display: block; }
+
+.submit-btn {
+  width: 100%; background: var(--gold); color: #fff; border: none;
+  padding: 16px; font-family: 'EB Garamond', serif; font-size: 16px;
+  letter-spacing: 0.04em; cursor: pointer; border-radius: 2px;
+  transition: all 0.2s; margin-bottom: 12px;
+}
+.submit-btn:hover { background: #7a5e28; }
+.submit-btn:disabled { opacity: 0.45; cursor: default; }
+
+.generating { text-align: center; padding: 80px 0; animation: fadeUp 0.5s ease; }
+.spinner { width: 52px; height: 52px; margin: 0 auto 28px; border: 1px solid var(--gold-light); border-top-color: transparent; border-radius: 50%; animation: spin 1.4s linear infinite; }
+.generating h2 { font-size: 26px; color: var(--gold); font-style: italic; margin-bottom: 10px; font-weight: 300; }
+.generating p { color: var(--ink3); font-style: italic; line-height: 1.8; }
+
+.result-wrap { animation: fadeUp 0.5s ease; }
+.letter-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.letter-divider-line { flex: 1; height: 1px; background: var(--border); }
+.letter-divider-text { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+
+.letter-paper {
+  background: var(--paper); border: 1px solid var(--border); border-radius: 2px;
+  padding: clamp(28px,6vw,44px); box-shadow: 0 2px 32px rgba(154,122,58,0.07);
+  position: relative; margin-bottom: 20px;
+}
+.letter-paper-quote { position: absolute; top: 8px; left: 18px; font-family: 'Cormorant Garamond', serif; font-size: 80px; color: var(--gold-pale); line-height: 1; pointer-events: none; }
+.letter-text { font-family: 'EB Garamond', serif; font-size: 16px; line-height: 1.95; color: #2a1f10; white-space: pre-wrap; position: relative; }
+.cursor { border-right: 1.5px solid var(--gold); animation: blink 1s step-end infinite; }
+
+.delivery-note {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 3px;
+  padding: 14px 18px; margin-bottom: 28px; font-size: 14px;
+  color: var(--ink2); font-style: italic; display: flex; align-items: center; gap: 10px;
+}
+.delivery-icon { font-size: 18px; flex-shrink: 0; }
+
+.upsell-block {
+  background: var(--paper); border: 1px solid var(--border); border-radius: 3px;
+  padding: 28px; text-align: center; margin-bottom: 20px;
+}
+.upsell-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; margin-bottom: 10px; }
+.upsell-body { font-size: 15px; color: var(--ink2); font-style: italic; line-height: 1.8; margin-bottom: 20px; }
+.upsell-btn {
+  display: inline-block; text-decoration: none; background: var(--gold); color: #fff;
+  padding: 13px 36px; font-family: 'EB Garamond', serif; font-size: 15px;
+  letter-spacing: 0.04em; border-radius: 2px; transition: all 0.2s;
+}
+.upsell-btn:hover { background: #7a5e28; }
+.upsell-price { font-size: 12px; color: var(--ink3); font-style: italic; margin-top: 10px; display: block; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo-name">
+    Last Word Letters
+    <span class="logo-sub">The letter you owe someone</span>
+  </a>
+  <a href="/" class="back-link">← Back to home</a>
+</nav>
+<main id="app"></main>
+
+<script>
+let state = {
+  step: "form",
+  recipient: "",
+  unsaid: "",
+  email: "",
+  paragraph: "",
+  displayedParagraph: "",
+};
+
+function render() {
+  const app = document.getElementById("app");
+  switch(state.step) {
+    case "form":       app.innerHTML = renderForm(); break;
+    case "generating": app.innerHTML = renderGenerating(); break;
+    case "result":     app.innerHTML = renderResult(); break;
+  }
+  bindEvents();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function renderForm() {
+  const canSubmit = state.recipient.trim().length > 2 &&
+                    state.unsaid.trim().length > 10 &&
+                    state.email.includes("@");
+  return `
+    <div class="hero-block">
+      <span class="hero-tag">Last Word Letters — Free</span>
+      <h1 class="hero-title">The opening line<br />you've been <em>looking for.</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-body">
+        Answer two questions. We'll write the opening paragraph of your letter — free.<br /><br />
+        No card. No commitment. Just the words.
+      </p>
+      <span class="hero-note">Free · Takes 2 minutes · Delivered to your inbox</span>
+    </div>
+
+    <div class="form-block">
+      <div class="question-block">
+        <label class="question-label" for="recipient">Who is this letter for?</label>
+        <span class="question-hint">↳ Their name and how they know you</span>
+        <input type="text" class="question-field" id="recipient"
+          placeholder="e.g. My father, David. We haven't spoken in two years."
+          value="${state.recipient}" />
+      </div>
+
+      <div class="question-block">
+        <label class="question-label" for="unsaid">What's the one thing you've never been able to say to them?</label>
+        <span class="question-hint">↳ Be as honest as you can. This is what your letter will open with.</span>
+        <textarea class="question-field" id="unsaid" rows="4"
+          placeholder="e.g. That I was wrong. That I've missed them every day. That I'm sorry it took me this long.">${state.unsaid}</textarea>
+      </div>
+
+      <label class="email-label">Your email — we'll send the paragraph here</label>
+      <input type="email" class="email-input" id="emailInput"
+        placeholder="your@email.com" value="${state.email}" />
+      <span class="email-note">We'll also send you the full letter offer. Unsubscribe any time.</span>
+
+      <button class="submit-btn" id="submitBtn" ${canSubmit ? "" : "disabled"}>
+        Write my opening paragraph →
+      </button>
+      <p style="font-size:12px;color:var(--ink3);font-style:italic;text-align:center;">
+        Free. No card required.
+      </p>
+    </div>`;
+}
+
+function renderGenerating() {
+  return `
+    <div class="generating">
+      <div class="spinner"></div>
+      <h2>Finding your words…</h2>
+      <p>Reading what you shared.<br />Just a moment.</p>
+    </div>`;
+}
+
+function renderResult() {
+  return `
+    <div class="result-wrap">
+      <div class="letter-divider">
+        <div class="letter-divider-line"></div>
+        <span class="letter-divider-text">✦ Your opening paragraph</span>
+        <div class="letter-divider-line"></div>
+      </div>
+
+      <div class="letter-paper">
+        <div class="letter-paper-quote">"</div>
+        <div class="letter-text" id="paragraphText">${state.displayedParagraph}<span class="cursor"> </span></div>
+      </div>
+
+      <div class="delivery-note">
+        <span class="delivery-icon">✉️</span>
+        <span>This paragraph has been sent to <strong>${state.email}</strong> — yours to keep.</span>
+      </div>
+
+      <div class="upsell-block">
+        <div class="upsell-title">Want the full letter?</div>
+        <p class="upsell-body">
+          This is just how it begins.<br />
+          The full letter — all four to six paragraphs, written entirely from what you share — is waiting.
+        </p>
+        <a href="/app" class="upsell-btn">Write the full letter →</a>
+        <span class="upsell-price">From £15 · Ready in minutes · Delivered to your inbox</span>
+      </div>
+    </div>`;
+}
+
+function bindEvents() {
+  const recipientInput = document.getElementById("recipient");
+  const unsaidInput = document.getElementById("unsaid");
+  const emailInput = document.getElementById("emailInput");
+
+  function updateBtn() {
+    const btn = document.getElementById("submitBtn");
+    if (btn) {
+      btn.disabled = !(
+        state.recipient.trim().length > 2 &&
+        state.unsaid.trim().length > 10 &&
+        state.email.includes("@")
+      );
+    }
+  }
+
+  if (recipientInput) {
+    recipientInput.addEventListener("input", () => { state.recipient = recipientInput.value; updateBtn(); });
+  }
+  if (unsaidInput) {
+    unsaidInput.addEventListener("input", () => { state.unsaid = unsaidInput.value; updateBtn(); });
+  }
+  if (emailInput) {
+    emailInput.addEventListener("input", () => { state.email = emailInput.value; updateBtn(); });
+  }
+
+  const submitBtn = document.getElementById("submitBtn");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", generateParagraph);
+  }
+}
+
+async function generateParagraph() {
+  state.step = "generating";
+  render();
+
+  try {
+    const res = await fetch("/api/generate-free-paragraph", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        recipient: state.recipient,
+        unsaid: state.unsaid,
+        email: state.email,
+      }),
+    });
+
+    const data = await res.json();
+    const paragraph = data.paragraph || "We couldn't generate your paragraph right now. Please try again.";
+
+    state.paragraph = paragraph;
+    state.displayedParagraph = "";
+    state.step = "result";
+    render();
+
+    // Typewriter effect
+    let i = 0;
+    const el = document.getElementById("paragraphText");
+    const interval = setInterval(() => {
+      i += 3;
+      state.displayedParagraph = paragraph.slice(0, i);
+      if (el) el.innerHTML = state.displayedParagraph + '<span class="cursor"> </span>';
+      if (i >= paragraph.length) {
+        state.displayedParagraph = paragraph;
+        if (el) el.innerHTML = paragraph + '<span class="cursor"> </span>';
+        clearInterval(interval);
+      }
+    }, 18);
+
+  } catch (err) {
+    console.error(err);
+    state.paragraph = "Something went wrong. Please try again.";
+    state.displayedParagraph = state.paragraph;
+    state.step = "result";
+    render();
+  }
+}
+
+render();
+</script>
+</body>
+</html>
